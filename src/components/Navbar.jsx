@@ -9,7 +9,7 @@ export default function Navbar() {
       <nav className="bg-gray-800 backdrop-blur-lg border-2 hover:shadow-[8px_8px_10px_black] fixed w-full top-0 left-0 z-50  p-4 ">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <button
-            className="md:hidden text-3xl p-2 focus:bg-gray-400 hover:translate-z-3 rounded-2xl hover:scale-110"
+            className="md:hidden text-3xl p-2 hover:bg-gray-700 hover:translate-z-3 rounded-2xl hover:scale-110"
             onClick={() => setOpen(!open)}
           >
             ☰

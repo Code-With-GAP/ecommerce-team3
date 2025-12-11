@@ -26,7 +26,7 @@ export const About = () => {
 
       
       <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 
-                          bg-gradient-to-r from-blue-700 to-indigo-800
+                          bg-linear-to-r from-blue-700 to-indigo-800
                           animate-fade-in">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
           About Us

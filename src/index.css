@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@keyframes slowPopup {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slowPopup {
+  animation: slowPopup 0.6s ease-out forwards;
+}
+

@@ -20,9 +20,9 @@ export const Contact = () => {
   return (
     <div className="text-white bg-gray-900">
 
-      {/* HERO SECTION */}
+      
       <section className="min-h-[50vh] flex flex-col items-center justify-center text-center px-6
-                          bg-gradient-to-r from-blue-700 to-indigo-800 animate-fade-in">
+                          bg-linear-to-r from-blue-700 to-indigo-800 animate-fade-in">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
           Contact Us
         </h1>
@@ -32,7 +32,7 @@ export const Contact = () => {
         </p>
       </section>
 
-      {/* CONTACT FORM SECTION */}
+      
       <section className="py-16 px-6 max-w-4xl mx-auto animate-slide-up">
         <div className="bg-gray-700 backdrop-blur-lg p-8 rounded-2xl border border-white/20 shadow-xl">
           <h2 className="text-3xl font-bold text-center mb-8 text-blue-400">
@@ -41,7 +41,7 @@ export const Contact = () => {
 
           <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6">
 
-            {/* NAME */}
+            
             <input
               type="text"
               name="name"
@@ -54,7 +54,7 @@ export const Contact = () => {
                          transition-all duration-300"
             />
 
-            {/* EMAIL */}
+            
             <input
               type="email"
               name="email"
@@ -67,7 +67,7 @@ export const Contact = () => {
                          transition-all duration-300"
             />
 
-            {/* MESSAGE */}
+            
             <textarea
               name="message"
               placeholder="Your Message"
@@ -80,7 +80,7 @@ export const Contact = () => {
                          transition-all duration-300"
             ></textarea>
 
-            {/* BUTTON */}
+            
             <button
               type="submit"
               className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-xl
@@ -102,7 +102,7 @@ export const Contact = () => {
         <p className="text-lg text-gray-300 mt-1"> Location: India</p>
       </section>
 
-      {/* FOOTER */}
+      
       <footer className="py-10 text-center text-gray-300 border-t-2">
         © 2025 Your Store. All Rights Reserved.
       </footer>
