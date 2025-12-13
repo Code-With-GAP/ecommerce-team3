@@ -45,7 +45,7 @@ export const Login = () => {
               type="password"
               placeholder="Password"
               className="w-full px-4 py-3 text-white bg-transparent border border-gray-400 rounded-md
-                         peer focus:border-blue-400 focus:outline-none 
+                         peer focus:border-blue-800 focus:outline-none 
                          placeholder-transparent transition-all"
             />
 
@@ -85,7 +85,7 @@ export const Login = () => {
 
       <div className="flex ">
         <footer className="py-10 text-center text-gray-300 border-t-2 mt-5">
-          © 2025 Your Store. All Rights Reserved.
+          © 2025 Shop Lee. All Rights Reserved.
         </footer>
       </div>
     </div>

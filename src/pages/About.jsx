@@ -38,11 +38,11 @@ export const About = () => {
       </section>
 
       
-      <section className="py-16 px-6 max-w-5xl mx-auto animate-slide-up">
+      <section className="bg-gray-900 py-16 px-6 mx-auto animate-slide-up">
         <h2 className="text-3xl font-bold text-center mb-6 text-blue-600">
           Our Mission
         </h2>
-        <p className="text-center text-black max-w-3xl mx-auto text-lg">
+        <p className=" text-center text-black max-w-3xl mx-auto text-lg">
           Our mission is to create an online store that feels intuitive, personal, and
           easy to use. We want every customer to feel confident and excited when
           shopping with us!
@@ -50,7 +50,7 @@ export const About = () => {
       </section>
 
       
-      <section className="py-16 px-6 bg-blue-900/40 backdrop-blur-md">
+      <section className="py-16 px-6 bg-blue-900 backdrop-blur-md">
         <h2 className="text-3xl font-bold text-center mb-12 text-blue-400">
           Meet the Team
         </h2>
