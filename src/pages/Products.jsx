@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 export default function Products() {
@@ -68,33 +69,52 @@ export default function Products() {
       </div>
 
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {filteredProducts.map((product) => (
-          <div
-            key={product.id}
-            className="p-4 rounded-xl bg-gray-800 text-white shadow"
-          >
-            <img
-              src={product.thumbnail}
-              alt={product.title}
-              className="h-40 mx-auto object-contain"
-            />
+      
+        <div 
+          className="flex justify-center flex-wrap gap-8 ">
+            {filteredProducts.map((product) => (
+              <Link
+                  to={`/product/${product.id}`}
+                  key={product.id}
+                  className="group relative p-5 rounded-2xl bg-linear-to-br from-gray-900 via-gray-800 to-gray-900 w-70 
+                            text-white shadow-xl hover:shadow-2xl transition-all duration-300 
+                            hover:-translate-y-2 border border-gray-700"
+                >
+                  
+                  <div className="relative overflow-hidden rounded-xl bg-gray-950">
+                    <img
+                      src={product.thumbnail}
+                      alt={product.title}
+                      className="h-44 w-full object-contain transition-transform duration-300 
+                                group-hover:scale-110"
+                    />
+                  </div>
 
-            <h2 className="font-bold mt-3">{product.title}</h2>
+                  
+                  <div className="mt-4 space-y-2">
+                    <h2 className="font-semibold text-lg tracking-wide line-clamp-1">
+                      {product.title}
+                    </h2>
 
-            <p className="mt-1">
-              ₹ {(product.price * 83).toFixed(0)}
-            </p>
+                    <p className="text-green-400 text-xl font-bold">
+                      ₹ {(product.price * 83).toFixed(0)}
+                    </p>
+                  </div>
 
-            <button
-              onClick={() => addToCart(product)}
-              className="mt-3 w-full bg-green-500 hover:bg-green-600 py-2 rounded-lg"
-            >
-              Add to Cart
-            </button>
-          </div>
-        ))}
-      </div>
+                  
+                  <button
+                    onClick={() => addToCart(product)}
+                    className="mt-4 w-full rounded-xl py-2.5 font-semibold 
+                              bg-linear-to-r from-green-500 to-emerald-600
+                              hover:from-green-400 hover:to-emerald-500
+                              transition-all duration-300 shadow-lg"
+                  >
+                    Add to Cart
+                  </button>
+                </Link>
+
+            ))}
+        </div>
 
       
       {filteredProducts.length === 0 && (

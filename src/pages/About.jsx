@@ -42,7 +42,7 @@ export const About = () => {
         <h2 className="text-3xl font-bold text-center mb-6 text-blue-600">
           Our Mission
         </h2>
-        <p className=" text-center text-black max-w-3xl mx-auto text-lg">
+        <p className=" text-center text-white max-w-3xl mx-auto text-lg">
           Our mission is to create an online store that feels intuitive, personal, and
           easy to use. We want every customer to feel confident and excited when
           shopping with us!
@@ -77,7 +77,7 @@ export const About = () => {
       </section>
 
       
-      <footer className=" border-t-2 py-10 text-center text-black">
+      <footer className=" border-t-2 py-10 text-center bg-gray-900 text-white">
         © 2025 Your Store. All Rights Reserved.
       </footer>
     </div>

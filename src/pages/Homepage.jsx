@@ -1,17 +1,29 @@
-import { useEffect, useState } from "react";
+
+
+import { useEffect, useRef, useState } from "react";
 import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 export default function Homepage() {
   const [featured, setFeatured] = useState([]);
   const { addToCart } = useCart();
+  const sliderRef = useRef(null);
 
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
       .then((data) => {
-        setFeatured(data.products.slice(0, 3));
+        setFeatured(data.products.slice(0, 20));
       });
   }, []);
+
+  const scrollLeft = () => {
+    sliderRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    sliderRef.current.scrollBy({ left: 300, behavior: "smooth" });
+  };
 
   return (
     <div className="text-white">
@@ -54,28 +66,63 @@ export default function Homepage() {
       </section>
 
       
-      <section className="bg-gray-900 py-16 px-6">
+      <section className="bg-gray-900 py-16 px-6 relative">
         <h2 className="text-4xl font-bold text-center mb-10">
-          Women's ☕ Products
+          Top Products ☕
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        
+        <button
+          onClick={scrollLeft}
+          className="hidden md:flex absolute left-20 top-1/2 -translate-y-1/2 z-10
+                     bg-black/60 hover:bg-black/80 p-3 w-20 rounded-4xl  "
+        >
+          ⬅
+        </button>
+
+        
+        <button
+          onClick={scrollRight}
+          className="hidden md:flex absolute right-20 top-1/2 -translate-y-1/2 z-10
+                     bg-black/60 hover:bg-black/80 p-3  w-20 rounded-4xl"
+        >
+          ➡
+        </button>
+
+        {/* SLIDER */}
+        <div
+          ref={sliderRef}
+          className="no-scrollbar flex gap-8 overflow-x-auto px-4"
+        >
           {featured.map((product) => (
             <div
               key={product.id}
-              className="bg-gray-800 p-5 rounded-2xl shadow-lg hover:scale-105 transition"
+              className="min-w-[280px] bg-gray-800 p-5 rounded-2xl shadow-lg"
             >
-              <img
-                src={product.thumbnail}
-                alt={product.title}
-                className="h-48 w-full object-contain mb-4"
-              />
+              <Link to={`/product/${product.id}`}>
+                <img
+                  src={product.thumbnail}
+                  alt={product.title}
+                  className="h-48 w-full object-contain mb-4"
+                />
 
-              <h3 className="font-bold text-lg">{product.title}</h3>
+                <h3 className="font-bold text-lg line-clamp-1">
+                  {product.title}
+                </h3>
 
-              <p className="text-green-400 mt-1">
-                ₹ {(product.price * 83).toFixed(0)}
-              </p>
+                <p className="text-green-400 mt-1">
+                  ₹ {(product.price * 85).toFixed(0)}
+                </p>
+
+                <div className="flex items-center gap-2">
+                  <span className="text-yellow-400">
+                    {"⭐".repeat(Math.floor(product.rating))}
+                  </span>
+                  <span className="text-sm text-gray-300">
+                    {product.rating}
+                  </span>
+                </div>
+              </Link>
 
               <button
                 onClick={() => addToCart(product)}

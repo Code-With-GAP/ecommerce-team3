@@ -4,7 +4,7 @@ import { useCart } from "../context/CartContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { cart } = useCart(); // 👈 CART STATE
+  const { cart } = useCart(); 
 
   return (
     <nav className=" backdrop-blur-lg border-t border-b fixed w-full top-0 left-0 z-50 p-4 transition-all duration-300 hover:shadow-[0_6px_8px_black]">
@@ -26,23 +26,23 @@ export default function Navbar() {
           ${open ? "block" : "hidden"}`}
         >
           <li>
-            <Link to="/" className="block p-2 hover:text-blue-400">Home</Link>
+            <Link to="/" className="block p-2 hover:text-red-600">Home</Link>
           </li>
 
           <li>
-            <Link to="/products" className="block p-2 hover:text-blue-400">
+            <Link to="/products" className="block p-2 hover:text-red-600">
               Products
             </Link>
           </li>
 
           <li>
-            <Link to="/about" className="block p-2 hover:text-blue-400">
+            <Link to="/about" className="block p-2 hover:text-red-600">
               About
             </Link>
           </li>
 
           <li>
-            <Link to="/contact" className="block p-2 hover:text-blue-400">
+            <Link to="/contact" className="block p-2 hover:text-red-600">
               Contact
             </Link>
           </li>
